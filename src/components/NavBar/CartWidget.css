@@ -1,0 +1,43 @@
+#cart__style {
+    /* position: absolute;
+    left: 95vw;
+    top: 1.5vh; */
+    color: white;
+    width: 2rem;
+    height: 2rem;
+}
+#dot {
+    height: 1rem;
+    width: 1rem;
+    padding: 0.25rem;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: smaller;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+
+#cart__style:hover{
+    /* position: absolute;
+    left: 95vw;
+    top: 1.5vh; */
+    color: white;
+    transform: scale(1.4);
+
+}
+
+#cart__style:hover + #dot{
+    /* position: absolute;
+    left: 95vw;
+    top: 1.5vh; */
+    transform: scale(1.2);
+
+}
+
+#dot_number {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    top: -0.35rem;
+}

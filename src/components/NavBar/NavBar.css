@@ -1,40 +1,4 @@
-/* .nav-bar {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 6vh;
-    padding: 0;
-    margin: 0;
-    background-color: blueviolet;
-    justify-content: space-around;
-    align-items: center;
-}
 
-.nav-bar__header {
-    display: block;
-    box-sizing: border-box;
-
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-bar__clickeableCategory {
-    display: block;
-    box-sizing: border-box;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-bar__clickeableCategory:hover {
-    display: block;
-    box-sizing: border-box;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(73, 32, 112);
-} */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 .custom__navbar {
