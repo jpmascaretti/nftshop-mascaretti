@@ -11,7 +11,6 @@ const Navigation = () => {
             <Container>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Brand className="custom__navfont--navbrand" href="/">NFT Shop</Navbar.Brand>
-
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-au1to">
                         <Nav.Link className="custom__hover custom__navfont" href="#library">Library</Nav.Link>
@@ -21,7 +20,7 @@ const Navigation = () => {
                         <Nav.Link className="custom__hover custom__navfont" href="#legendary">Legendary</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
-                <CartWidget />
+                <CartWidget/>
             </Container>
 
         </Navbar>
