@@ -1,16 +1,23 @@
 .button__wrapper{
     display: flex;
     position: absolute;
-    left: 50%;;
+    width: 100%;
     top: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__wrapper--second{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 59%;
     justify-content: center;
     align-items: center;
 
 }
 .button__add-to-cart {
     position: absolute;
-    top: 60%;
-    left: calc(50% - 2rem);
     width: 8rem;
     height: 2rem;
     margin: 0;
@@ -23,8 +30,6 @@
 
 .button__add-to-cart--disabled {
     position: absolute;
-    top: 60%;
-    left: calc(50% - 2rem);
     width: 8rem;
     height: 2rem;
     margin: 0;
@@ -44,3 +49,4 @@
     border-radius: 0.3rem;
     background-color: rgb(174, 178, 182);
 }
+
