@@ -1,27 +1,20 @@
 .button__wrapper{
     display: flex;
-    position: absolute;
-    width: 100%;
-    top: 50%;
     justify-content: center;
     align-items: center;
 }
 
 .button__wrapper--second{
     display: flex;
-    position: absolute;
-    width: 100%;
-    top: 59%;
     justify-content: center;
     align-items: center;
 
 }
 .button__add-to-cart {
-    position: absolute;
-    width: 8rem;
-    height: 2rem;
     margin: 0;
     padding: 0;
+    width: 8rem;
+    height: 2rem;
     border: none;
     border-radius: 0.3rem;
     background-color: rgb(150, 19, 161);
@@ -29,11 +22,10 @@
 }
 
 .button__add-to-cart--disabled {
-    position: absolute;
-    width: 8rem;
-    height: 2rem;
     margin: 0;
     padding: 0;
+    width: 8rem;
+    height: 2rem;
     border: none;
     border-radius: 0.3rem;
 }

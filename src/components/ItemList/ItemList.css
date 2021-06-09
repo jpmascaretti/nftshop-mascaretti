@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 
 
@@ -9,4 +9,14 @@
     margin-left: 2vw;
     font-size: min(3.2vw,4vh);
     color: black;
+} */
+
+.card__grid--layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items:center;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    
 }
