@@ -1,0 +1,21 @@
+.card__position--top {
+    position: absolute;
+    top: 10%;
+}
+
+.card__title {
+    font-size: x-large;
+    font-weight: 900;
+    text-align: center;
+}
+.card__image--size{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__image{
+    width: 40vmax;
+    height: 60vh;
+    align-self: center;
+}
