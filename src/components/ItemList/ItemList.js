@@ -1,20 +1,24 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import "./ItemList.css";
-import {CardColumns} from 'react-bootstrap'
+import { CardColumns } from "react-bootstrap";
 
-const ItemList = ({items}) => {
-    const [info, setData] = useState([]);
-    items.then(data => setData(data))
+const ItemList = ({ items }) => {
+  const [info, setData] = useState([]);
 
-    return ( 
-        <CardColumns className="card__grid--layout">
-            {info.map((element,i) => 
-            <React.Fragment >
-                <Item key={i} properties={element}/>
-            </React.Fragment>)}
-        </CardColumns>
-    )
-}
+  useEffect(() => {
+    items.then((data) => setData(data));
+  }, [items]);
 
-export default ItemList
+  return (
+    <CardColumns className="card__grid--layout">
+      {info.map((element, i) => (
+        <React.Fragment>
+          <Item key={i} properties={element} />
+        </React.Fragment>
+      ))}
+    </CardColumns>
+  );
+};
+
+export default ItemList;

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Button} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 import ItemCount from '../ItemCount/ItemCount'
 import "../ItemCount/ItemCount.css";
 
@@ -10,7 +10,7 @@ const Item = ({properties}) => {
       }
     
     return (
-    <Card style={{ width: '26rem' }} id={properties.id}>
+    <Card style={{ width: '26rem' }} key={properties.id}>
         <Card.Img variant="top" src={properties.pictureUrl} />
         <Card.Body>
             <Card.Title>{properties.title}</Card.Title>
