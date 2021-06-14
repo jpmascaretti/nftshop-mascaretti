@@ -14,7 +14,8 @@ function App() {
   return (
     <div>
       <Navigation />
-      <ItemDetailContainer/>
+      <ItemListContainer/>
+      {/* <ItemDetailContainer/> */}
     </div>
   );
 }

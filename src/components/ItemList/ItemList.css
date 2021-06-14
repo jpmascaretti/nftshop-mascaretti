@@ -1,22 +1,13 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-
-
-
-.greet__style{
-    position: absolute;
-    font-family: 'Audiowide', cursive;
-    top: 12vh;
-    margin-left: 2vw;
-    font-size: min(3.2vw,4vh);
-    color: black;
-} */
+*/
 
 .card__grid--layout {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 10vh;
     align-items:center;
-    position: absolute;
-    top: 10%;
-    left: 5%;
+    justify-items: center;
+    /* left: 5%; */
     
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import {Card} from 'react-bootstrap'
 import ItemCount from '../ItemCount/ItemCount'
 import "../ItemCount/ItemCount.css";
+import "./Item.css";
 
 const Item = ({properties}) => {
     console.log(properties.pictureUrl)
