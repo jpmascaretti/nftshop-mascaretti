@@ -8,9 +8,7 @@ const ItemList = ({ items}) => {
   return (
     <CardColumns className="card__grid--layout">
       {items.map((element, i) => (
-        <React.Fragment>
           <Item key={i} properties={element} />
-        </React.Fragment>
       ))}
     </CardColumns>
   );

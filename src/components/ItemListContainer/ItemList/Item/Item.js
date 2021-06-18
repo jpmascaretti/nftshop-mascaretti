@@ -11,10 +11,11 @@ const Item = ({properties}) => {
         console.log("Added to Cart");
       }
     return (
-    <Card style={{ width: '26rem' }}>
+        // Just need to make card centered and add a detailed description
+    <Card style={{ width: '26rem' }} key={properties.id}>
         <Link to={`/item/${properties.id}`}>
         <Card.Img variant="top" src={properties.pictureUrl} />
-        <Card.Body className="card__body--text">
+        <Card.Body className="card__body--text" >
             <Card.Title className="card__body--text">{properties.title}</Card.Title>
             <Card.Text className="card__body--text">
             {properties.description}
