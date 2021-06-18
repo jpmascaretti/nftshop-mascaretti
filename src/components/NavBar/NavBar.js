@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+
 import CartWidget from "./CartWidget";
 import "./NavBar.css";
 
@@ -22,12 +23,12 @@ const Navigation = () => {
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-au1to">
-              <Nav.Link
+              {/* <Nav.Link
                 className="custom__hover custom__navfont"
-                href="#library"
+                href="library/:libraryId"
               >
                 Library
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link
                 className="custom__hover custom__navfont"
                 href="#common"

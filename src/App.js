@@ -1,20 +1,13 @@
 import "./components/NavBar/NavBar.css";
 import Navigation from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-
-
-
-//Notes: Just need to add responsiveness to the product grid (nice to have)
-//Missing product description
+import RouteComponent from "./components/RouteComponent/RouteComponent";
 
 function App() {
-  
 
   return (
     <div>
       <Navigation />
-      <ItemListContainer/>
+      <RouteComponent/>
       {/* <ItemDetailContainer/> */}
     </div>
   );

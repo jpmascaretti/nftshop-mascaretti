@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
-import ItemCount from '../ItemCount/ItemCount'
-import "../ItemCount/ItemCount.css";
+import ItemCount from '../../ItemCount/ItemCount'
+import "../../ItemCount/ItemCount.css";
 import "./ItemDetail.css"
 
 // Note: responsiveness included in single page

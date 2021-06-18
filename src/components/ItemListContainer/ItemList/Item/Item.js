@@ -1,7 +1,8 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
-import ItemCount from '../ItemCount/ItemCount'
-import "../ItemCount/ItemCount.css";
+import {Link} from 'react-router-dom'
+import ItemCount from '../../../ItemCount/ItemCount'
+import "../../../ItemCount/ItemCount.css";
 import "./Item.css";
 
 const Item = ({properties}) => {
@@ -12,16 +13,18 @@ const Item = ({properties}) => {
     
     return (
     <Card style={{ width: '26rem' }} key={properties.id}>
+        <Link to="/item/:id">
         <Card.Img variant="top" src={properties.pictureUrl} />
-        <Card.Body>
-            <Card.Title>{properties.title}</Card.Title>
-            <Card.Text>
+        <Card.Body className="card__body--text">
+            <Card.Title className="card__body--text">{properties.title}</Card.Title>
+            <Card.Text className="card__body--text">
             {properties.description}
             </Card.Text>
-            <Card.Text>
+            <Card.Text className="card__body--text">
             {properties.price}.000 ETH
             </Card.Text>
         </Card.Body>
+        </Link>
         <Card.Footer>
         <ItemCount onAdd={onAdd} stock={5} initial={1} />
         </Card.Footer>

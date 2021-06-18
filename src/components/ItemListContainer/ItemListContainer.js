@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import ItemList from "../ItemList/ItemList";
+import ItemList from "../ItemListContainer/ItemList/ItemList";
 import "./ItemListContainer.css";
-import {nftItems} from '../products';
+import {nftItems} from '../Products/products';
 
 
 const getProducts = (() => {
