@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import ItemList from "../ItemListContainer/ItemList/ItemList";
+import ItemList from "./ItemList/ItemList";
 import "./ItemListContainer.css";
 import {nftItems} from '../Products/products';
+// import { useParams } from "react-router-dom";
 
 
 const getProducts = (() => {
@@ -16,16 +17,19 @@ const getProducts = (() => {
 const ItemListContainer = (props) => {
 
   const [itemsFromPromise, setData] = useState([]);
+  // const {id} = useParams()
 
   useEffect(() => {
     getProducts().then(product => {
       setData(product)
   } )
   }, []);
-    /* Here goes ItemLists calling the const of items. Inside of ItemLists I map every item to Item */
     
+  // const filterByCategory = itemsFromPromise => itemsFromPromise.filter(nftItem => nftItem.category === di);
+
   return (
-    <ItemList items={itemsFromPromise} />
+    
+    <ItemList items={itemsFromPromise}/>
   );
 
 

@@ -4,17 +4,18 @@ import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 
 const RouteComponent = () => {
+
     return (
         <div>
             <BrowserRouter>
                 <Switch>
-                    <Route path="/">
+                    <Route exact path="/">
                         <ItemListContainer/>
                     </Route>
-                    <Route exact path="/category/:id">
+                    <Route path="/category/:categoryId">
                         <ItemListContainer/>
                     </Route>
-                    <Route exact path="/item/:id">
+                    <Route path="/item/:id">
                         <ItemDetailContainer/>
                     </Route>
                 </Switch>

@@ -10,10 +10,9 @@ const Item = ({properties}) => {
     function onAdd() {
         console.log("Added to Cart");
       }
-    
     return (
-    <Card style={{ width: '26rem' }} key={properties.id}>
-        <Link to="/item/:id">
+    <Card style={{ width: '26rem' }}>
+        <Link to={`/item/${properties.id}`}>
         <Card.Img variant="top" src={properties.pictureUrl} />
         <Card.Body className="card__body--text">
             <Card.Title className="card__body--text">{properties.title}</Card.Title>
