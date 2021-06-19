@@ -11,5 +11,10 @@
 
 a:hover {
     text-decoration: none;
+}
 
+.card__item--position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
