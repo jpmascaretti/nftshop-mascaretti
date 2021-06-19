@@ -6,10 +6,7 @@ import "../../../ItemCount/ItemCount.css";
 import "./Item.css";
 
 const Item = ({properties}) => {
-    console.log(properties.pictureUrl)
-    function onAdd() {
-        console.log("Added to Cart");
-      }
+
     return (
     <Card style={{ width: '24rem' }}>
         <Link to={`/item/${properties.id}`}>
@@ -20,12 +17,12 @@ const Item = ({properties}) => {
             {properties.description}
             </Card.Text>
             <Card.Text className="card__body--text">
-            {properties.price}.000 ETH
+            {properties.price}.000 ETH = ${Math.round(2237.88*properties.price).toFixed(2)} USD
             </Card.Text>
         </Card.Body>
         </Link>
         <Card.Footer>
-        <ItemCount onAdd={onAdd} stock={5} initial={1} />
+        <ItemCount stock={5} initial={1} />
         </Card.Footer>
     </Card>
 

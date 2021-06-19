@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from "./ItemDetail/ItemDetail";
-import {nftItems} from '../Products/products';
+import {nftItems} from '../../Products/products';
 import { useParams } from "react-router-dom";
 
 const getItems = (() => {
-    const singleProduct = new Promise((resolve, reject) => {
+    const singleProd = new Promise((resolve, reject) => {
     
         setTimeout(resolve(nftItems), 2000)
     })
-    return singleProduct
+    return singleProd
 })
 
 
 const ItemDetailContainer = () => {
 
-    const[singleProd, setSingleProduct] = useState([])
+    const[singleProduct, setSingleProduct] = useState([])
     const {id} = useParams()
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
     console.log(typeof(id))
 
     return (
-        <ItemDetail item={singleProd}/>
+        <ItemDetail item={singleProduct}/>
     )
 }
 

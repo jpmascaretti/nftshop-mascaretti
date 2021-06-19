@@ -2,8 +2,6 @@ import React from 'react'
 import { Cart3 } from 'react-bootstrap-icons';
 import './CartWidget.css'
 
-// https://icons.getbootstrap.com/
-
 function CartWidget() {
     return (
     <>        

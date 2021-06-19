@@ -4,7 +4,6 @@ import "./ItemCount.css";
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
 
-  //onAdd is just a placeholder callback fx
   return (
     <>
       <div className="button__wrapper">
@@ -40,7 +39,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
               : "button__add-to-cart--disabled"
           }
           disabled={count > 0 && count <= stock ? false : true}
-          onClick={onAdd}
         >
           Add to Cart
         </button>

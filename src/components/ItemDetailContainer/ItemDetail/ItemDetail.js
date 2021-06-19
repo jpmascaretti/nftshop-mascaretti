@@ -8,11 +8,6 @@ import "./ItemDetail.css"
 
 const ItemDetail = ({item}) => {
 
-    function onAdd() {
-        console.log("Added to Cart");
-      }
-
-
     return (
     <Card className="card__position--top">
         <Card.Body>
@@ -26,13 +21,16 @@ const ItemDetail = ({item}) => {
             {item.description}
          </Card.Text>
           <Card.Text>
+            {item.detailedDescription}
+          </Card.Text>
+          <Card.Text>
             ID#{item.id}
           </Card.Text>
         <Card.Text>
-            {item.price}.000 ETH
+            {item.price}.000 ETH = ${Math.round(2237.88*item.price).toFixed(2)} USD
         </Card.Text>
         <Card.Footer>
-        <ItemCount onAdd={onAdd} stock={5} initial={1} />
+        <ItemCount stock={5} initial={1} />
         </Card.Footer>
         </Card.Body>
 
