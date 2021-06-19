@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ItemList from "./ItemList/ItemList";
 import "./ItemListContainer.css";
-import {nftItems} from '../Products/products';
+import {nftItems} from '../../Products/products';
 import { useParams } from "react-router-dom";
 
 
