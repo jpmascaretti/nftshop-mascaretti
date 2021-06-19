@@ -12,6 +12,7 @@ const ItemDetail = ({item}) => {
         console.log("Added to Cart");
       }
 
+
     return (
     <Card className="card__position--top">
         <Card.Body>

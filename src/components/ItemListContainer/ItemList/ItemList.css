@@ -11,3 +11,12 @@
     /* left: 5%; */
     
 }
+
+.card__single--layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 10vh;
+    align-items:center;
+    justify-items: center;
+}

@@ -1,6 +1,7 @@
 .card__position--top {
-    position: absolute;
-    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card__title {
@@ -15,7 +16,7 @@
 }
 
 .card__image{
-    width: 40vmax;
+    width: 35vmax;
     height: 60vh;
     align-self: center;
 }

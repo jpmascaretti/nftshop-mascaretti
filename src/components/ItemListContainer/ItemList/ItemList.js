@@ -5,6 +5,8 @@ import { CardColumns } from "react-bootstrap";
 
 const ItemList = ({ items}) => {
 
+  // const size = Object.keys(items).length;
+
   return (
     <CardColumns className="card__grid--layout">
       {items.map((element, i) => (

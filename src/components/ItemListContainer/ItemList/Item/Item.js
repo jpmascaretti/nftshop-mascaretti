@@ -11,7 +11,7 @@ const Item = ({properties}) => {
         console.log("Added to Cart");
       }
     return (
-    <Card className="card__item--position" style={{ width: '26rem' }}>
+    <Card style={{ width: '24rem' }}>
         <Link to={`/item/${properties.id}`}>
         <Card.Img variant="top" src={properties.pictureUrl} />
         <Card.Body className="card__body--text" >
