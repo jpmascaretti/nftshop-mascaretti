@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import ItemList from "./ItemList/ItemList";
 import "./ItemListContainer.css";
 import {nftItems} from '../Products/products';
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 const getProducts = (() => {
@@ -17,16 +17,19 @@ const getProducts = (() => {
 const ItemListContainer = (props) => {
 
   const [itemsFromPromise, setData] = useState([]);
-  // const {id} = useParams()
+  const {categoryId} = useParams()
 
   useEffect(() => {
     getProducts().then(product => {
-      setData(product)
-  } )
-  }, []);
-    
-  // const filterByCategory = itemsFromPromise => itemsFromPromise.filter(nftItem => nftItem.category === di);
+      if (categoryId === undefined) {
+        setData(product)
+      } else {
+        setData(product.filter(nftItem => nftItem.category === categoryId))
+      }
 
+  } )
+  }, [categoryId]);
+    
   return (
     
     <ItemList items={itemsFromPromise}/>

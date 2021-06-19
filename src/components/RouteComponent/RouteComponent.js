@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 
@@ -7,7 +7,6 @@ const RouteComponent = () => {
 
     return (
         <div>
-            <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
                         <ItemListContainer/>
@@ -19,7 +18,6 @@ const RouteComponent = () => {
                         <ItemDetailContainer/>
                     </Route>
                 </Switch>
-            </BrowserRouter>
         </div>
     )
 }

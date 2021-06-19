@@ -14,7 +14,7 @@ const Item = ({properties}) => {
     <Card className="card__item--position" style={{ width: '26rem' }}>
         <Link to={`/item/${properties.id}`}>
         <Card.Img variant="top" src={properties.pictureUrl} />
-        <Card.Body className="card__body--text">
+        <Card.Body className="card__body--text" >
             <Card.Title className="card__body--text">{properties.title}</Card.Title>
             <Card.Text className="card__body--text">
             {properties.description}
