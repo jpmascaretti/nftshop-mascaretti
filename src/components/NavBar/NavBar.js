@@ -2,12 +2,11 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import CartWidget from "./CartWidget";
 import "./NavBar.css";
-import { Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <>
-
       <Navbar
         className="custom__navbar"
         collapseOnSelect
@@ -18,27 +17,38 @@ const Navigation = () => {
       >
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Link to='/'>
-          <Navbar.Brand className="custom__navfont--navbrand">
-            NFT Shop
-          </Navbar.Brand>
+          <Link to="/">
+            <Navbar.Brand className="custom__navfont--navbrand">
+              NFT Shop
+            </Navbar.Brand>
           </Link>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-au1to">
-                <Nav.Link
-                  className="custom__hover custom__navfont" as={Link} to="/category/common"
-                >
-                  Common
-                </Nav.Link>
-              <Nav.Link className="custom__hover custom__navfont"  as={Link} to="/category/rare">
+              <Nav.Link
+                className="custom__hover custom__navfont"
+                as={Link}
+                to="/category/common"
+              >
+                Common
+              </Nav.Link>
+              <Nav.Link
+                className="custom__hover custom__navfont"
+                as={Link}
+                to="/category/rare"
+              >
                 Rare
               </Nav.Link>
-              <Nav.Link className="custom__hover custom__navfont" as={Link} to="/category/epic">
+              <Nav.Link
+                className="custom__hover custom__navfont"
+                as={Link}
+                to="/category/epic"
+              >
                 Epic
               </Nav.Link>
               <Nav.Link
                 className="custom__hover custom__navfont"
-                as={Link} to="/category/legendary"
+                as={Link}
+                to="/category/legendary"
               >
                 Legendary
               </Nav.Link>

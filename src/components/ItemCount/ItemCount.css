@@ -1,44 +1,42 @@
-.button__wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button__wrapper--second{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.button__wrapper--second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .button__add-to-cart {
-    margin: 0;
-    padding: 0;
-    width: 8rem;
-    height: 2rem;
-    border: none;
-    border-radius: 0.3rem;
-    background-color: rgb(150, 19, 161);
-    color: white;
+  margin: 0;
+  padding: 0;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(150, 19, 161);
+  color: white;
 }
 
 .button__add-to-cart--disabled {
-    margin: 0;
-    padding: 0;
-    width: 8rem;
-    height: 2rem;
-    border: none;
-    border-radius: 0.3rem;
+  margin: 0;
+  padding: 0;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.3rem;
 }
 
 .button__count {
-    border: none;
-    border-radius: 0.3rem;
-    background-color: rgb(21, 131, 221);
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(21, 131, 221);
 }
 
 .button__count--disabled {
-    border: none;
-    border-radius: 0.3rem;
-    background-color: rgb(174, 178, 182);
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(174, 178, 182);
 }
-

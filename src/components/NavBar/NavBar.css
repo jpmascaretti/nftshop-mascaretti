@@ -1,28 +1,28 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
 .custom__navbar {
-    background-image: linear-gradient(to right, rgb(150, 19, 161) , rgb(21, 131, 221));
+  background-image: linear-gradient(
+    to right,
+    rgb(150, 19, 161),
+    rgb(21, 131, 221)
+  );
 }
-
 
 .custom__hover:link {
-    color: white ;
+  color: white;
 }
 
-.custom__hover:hover{
-    color: orange !important;
-    font-weight: bolder;
+.custom__hover:hover {
+  color: orange !important;
+  font-weight: bolder;
 }
-
 
 .custom__navfont {
-    font-family: 'Audiowide', cursive;
+  font-family: "Audiowide", cursive;
 }
 
 .custom__navfont--navbrand {
-    font-family: 'Audiowide', cursive;
-    font-size: large;
-    margin-bottom: 0.49vh;
+  font-family: "Audiowide", cursive;
+  font-size: large;
+  margin-bottom: 0.49vh;
 }
-
