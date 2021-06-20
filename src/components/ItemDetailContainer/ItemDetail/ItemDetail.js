@@ -1,25 +1,36 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import ItemCount from "../../ItemCount/ItemCount";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import "../../ItemCount/ItemCount.css";
 import "./ItemDetail.css";
 
-const CustomButtonContainer = ({ component: CartActionButton, add, cancel }) => {
+const CustomButtonContainer = ({
+  component: CartActionButton,
+  add,
+  cancel,
+}) => {
   if (CartActionButton === ItemCount) {
     return <CartActionButton stock={5} initial={1} addToCart={add} />;
   } else {
-    return <CartActionButton cancelPurchase={cancel}/>;
+    return <CartActionButton cancelPurchase={cancel} />;
   }
 };
 
-const CartPurchaseButtons = ({cancelPurchase}) => {
+const CartPurchaseButtons = ({ cancelPurchase }) => {
   const routeHistory = useHistory();
 
   return (
     <div className="button__container--center">
-      <button className="button__purchase" onClick={e => routeHistory.push('/cart')}>Finish Purchase</button>
-      <button className="button__cancel" onClick={cancelPurchase}>Cancel</button>
+      <button
+        className="button__purchase"
+        onClick={(e) => routeHistory.push("/cart")}
+      >
+        Finish Purchase
+      </button>
+      <button className="button__cancel" onClick={cancelPurchase}>
+        Cancel
+      </button>
     </div>
   );
 };
@@ -56,7 +67,8 @@ const ItemDetail = ({ item }) => {
         <Card.Footer className="card__footer--background">
           <CustomButtonContainer
             component={addedToCart ? CartPurchaseButtons : ItemCount}
-            add={addToCart} cancel={cancelCart}
+            add={addToCart}
+            cancel={cancelCart}
           />
         </Card.Footer>
       </Card.Body>
