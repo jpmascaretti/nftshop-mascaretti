@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import ItemCount from '../../../ItemCount/ItemCount'
+// import ItemCount from '../../../ItemCount/ItemCount'
 import "../../../ItemCount/ItemCount.css";
 import "./Item.css";
 
@@ -21,9 +21,9 @@ const Item = ({properties}) => {
             </Card.Text>
         </Card.Body>
         </Link>
-        <Card.Footer>
+        {/* <Card.Footer>
         <ItemCount stock={5} initial={1} />
-        </Card.Footer>
+        </Card.Footer> */}
     </Card>
 
     )

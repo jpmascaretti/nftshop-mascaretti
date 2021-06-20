@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial, addToCart }) => {
   const [count, setCount] = useState(initial);
-
+  // console.log(addToCart)
   return (
     <>
       <div className="button__wrapper">
@@ -39,6 +39,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
               : "button__add-to-cart--disabled"
           }
           disabled={count > 0 && count <= stock ? false : true}
+          onClick={addToCart}
         >
           Add to Cart
         </button>

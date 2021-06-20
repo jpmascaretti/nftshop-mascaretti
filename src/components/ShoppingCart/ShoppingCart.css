@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+
+.temporary__cart {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color: black;
+    font-family: "Audiowide", cursive;
+    
+}

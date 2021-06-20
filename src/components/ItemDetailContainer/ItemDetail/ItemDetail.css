@@ -1,22 +1,65 @@
 .card__position--top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__title {
-    font-size: x-large;
-    font-weight: 900;
-    text-align: center;
+  font-size: x-large;
+  font-weight: 900;
+  text-align: center;
 }
-.card__image--size{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card__image--size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card__image{
-    width: 35vmax;
-    height: 60vh;
-    align-self: center;
+.card__image {
+  width: 35vmax;
+  height: 60vh;
+  align-self: center;
 }
+
+.card__footer--background {
+  background-color: white;
+}
+
+.button__container--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__purchase {
+  margin: 1rem;
+  padding: 0;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(150, 19, 161);
+  color: white;
+}
+
+.button__cancel {
+  margin: 1rem;
+  padding: 0;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(116, 116, 116);
+  color: white;
+}
+
+.button__purchase:hover {
+    font-weight: bolder;
+    background-color: rgb(17, 156, 82);
+}
+
+.button__cancel:hover {
+    font-weight: bolder;
+    background-color: rgb(233, 6, 25);
+}
+
