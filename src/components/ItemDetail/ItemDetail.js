@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import ItemCount from "../../ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import { useHistory } from "react-router-dom";
-import "../../ItemCount/ItemCount.css";
+import "../ItemCount/ItemCount.css";
 import "./ItemDetail.css";
 
 const CustomButtonContainer = ({

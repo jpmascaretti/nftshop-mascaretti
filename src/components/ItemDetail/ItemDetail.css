@@ -54,12 +54,11 @@
 }
 
 .button__purchase:hover {
-    font-weight: bolder;
-    background-color: rgb(17, 156, 82);
+  font-weight: bolder;
+  background-color: rgb(17, 156, 82);
 }
 
 .button__cancel:hover {
-    font-weight: bolder;
-    background-color: rgb(233, 6, 25);
+  font-weight: bolder;
+  background-color: rgb(233, 6, 25);
 }
-

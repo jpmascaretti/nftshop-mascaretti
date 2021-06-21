@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../ItemList/Item/Item";
+import Item from "../Item/Item";
 import "./ItemList.css";
 import { CardColumns } from "react-bootstrap";
 
