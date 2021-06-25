@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import "./ItemCount.css";
+import { ModeContext } from "../CartContext/CartContext";
 
-const ItemCount = ({ stock, initial, addToCart }) => {
+
+const ItemCount = ({ stock, initial, addToCart, item , addToCartContext}) => {
   const [count, setCount] = useState(initial);
+  const [cartState, setCartState] = useContext(ModeContext)
+
+
   return (
     <>
       <div className="button__wrapper">
@@ -38,7 +43,10 @@ const ItemCount = ({ stock, initial, addToCart }) => {
               : "button__add-to-cart--disabled"
           }
           disabled={count > 0 && count <= stock ? false : true}
-          onClick={addToCart}
+          onClick={() => {
+            addToCart()
+            setCartState([...cartState, item])
+          }}
         >
           Add to Cart
         </button>

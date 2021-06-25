@@ -1,26 +1,33 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Card } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 import "../ItemCount/ItemCount.css";
 import "./ItemDetail.css";
 import CartPurchaseButtons from "../CartPurchaseButtons/CartPurchaseButtons"
 
+
+
+
 const CustomButtonContainer = ({
   component: CartActionButton,
-  add,
+  addToCart,
   cancel,
+  item,
 }) => {
   if (CartActionButton === ItemCount) {
-    return <CartActionButton stock={5} initial={1} addToCart={add} />;
+    return <CartActionButton stock={5} initial={1} addToCart={addToCart} item={item} />;
   } else {
     return <CartActionButton cancelPurchase={cancel} />;
   }
 };
 
+
+
 const ItemDetail = ({ item }) => {
   const [addedToCart, setAddedToCart] = useState(false);
+  
 
-  function addToCart() {
+  function addToCart(element) {
     setAddedToCart(true);
   }
 
@@ -49,8 +56,9 @@ const ItemDetail = ({ item }) => {
         <Card.Footer className="card__footer--background">
           <CustomButtonContainer
             component={addedToCart ? CartPurchaseButtons : ItemCount}
-            add={addToCart}
+            addToCart={addToCart}
             cancel={cancelCart}
+            item={item}
           />
         </Card.Footer>
       </Card.Body>

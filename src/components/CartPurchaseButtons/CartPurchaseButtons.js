@@ -1,14 +1,14 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
 
-const CartPurchaseButtons = ({ cancelPurchase }) => {
+const CartPurchaseButtons = ({ cancelPurchase}) => {
     const routeHistory = useHistory();
-  
     return (
       <div className="button__container--center">
         <button
           className="button__purchase"
-          onClick={(e) => routeHistory.push("/cart")}
+          onClick={(e) => {
+            routeHistory.push("/cart")}}
         >
           Finish Purchase
         </button>
