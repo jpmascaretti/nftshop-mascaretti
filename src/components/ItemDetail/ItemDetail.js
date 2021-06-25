@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
-import { useHistory } from "react-router-dom";
 import "../ItemCount/ItemCount.css";
 import "./ItemDetail.css";
+import CartPurchaseButtons from "../CartPurchaseButtons/CartPurchaseButtons"
 
 const CustomButtonContainer = ({
   component: CartActionButton,
@@ -15,24 +15,6 @@ const CustomButtonContainer = ({
   } else {
     return <CartActionButton cancelPurchase={cancel} />;
   }
-};
-
-const CartPurchaseButtons = ({ cancelPurchase }) => {
-  const routeHistory = useHistory();
-
-  return (
-    <div className="button__container--center">
-      <button
-        className="button__purchase"
-        onClick={(e) => routeHistory.push("/cart")}
-      >
-        Finish Purchase
-      </button>
-      <button className="button__cancel" onClick={cancelPurchase}>
-        Cancel
-      </button>
-    </div>
-  );
 };
 
 const ItemDetail = ({ item }) => {

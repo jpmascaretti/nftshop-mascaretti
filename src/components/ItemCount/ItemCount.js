@@ -3,7 +3,6 @@ import "./ItemCount.css";
 
 const ItemCount = ({ stock, initial, addToCart }) => {
   const [count, setCount] = useState(initial);
-  // console.log(addToCart)
   return (
     <>
       <div className="button__wrapper">

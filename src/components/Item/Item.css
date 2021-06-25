@@ -1,6 +1,4 @@
-/* .card-position{
-    justify-self: center !important;
-} */
+
 .card__body--text {
     color: black;
 }
@@ -11,4 +9,8 @@
 
 a:hover {
     text-decoration: none;
+}
+
+.card__witdh--property {
+    width: 26rem;
 }

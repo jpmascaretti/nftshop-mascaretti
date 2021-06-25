@@ -7,7 +7,7 @@ import "./Item.css";
 const Item = ({properties}) => {
 
     return (
-    <Card style={{ width: '24rem' }}>
+    <Card className="card__width--property">
         <Link to={`/item/${properties.id}`}>
         <Card.Img variant="top" src={properties.pictureUrl} />
         <Card.Body className="card__body--text" >
