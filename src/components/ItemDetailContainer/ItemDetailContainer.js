@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { nftItems } from "../../nftproducts/products";
+import { nftItems } from "../../products/products";
 import { useParams } from "react-router-dom";
 
 const getItems = () => {
