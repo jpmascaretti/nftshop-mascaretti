@@ -1,12 +1,26 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import "./ItemCount.css";
 import { ModeContext } from "../CartContext/CartContext";
 
-
-const ItemCount = ({ stock, initial, addToCart, item , addToCartContext}) => {
+const ItemCount = ({ stock, initial, addToCart, item, setQtyAdded }) => {
   const [count, setCount] = useState(initial);
-  const [cartState, setCartState] = useContext(ModeContext)
+  const [cartState, setCartState] = useContext(ModeContext);
 
+  function addItemToCart(cartItem, quantity) {
+    if (
+      !cartState.includes(cartItem) &&
+      cartState[cartState.indexOf(cartItem) + 1] !== quantity
+    ) {
+      setCartState([...cartState, cartItem, quantity]);
+    } else if (cartState.includes(cartItem)) {
+      quantity = cartState[cartState.indexOf(cartItem) + 1] + quantity;
+      if (quantity <= stock) {
+        const updatedCart = cartState;
+        updatedCart[cartState.indexOf(cartItem) + 1] = quantity;
+        setCartState([...updatedCart]);
+      }
+    }
+  }
 
   return (
     <>
@@ -44,8 +58,9 @@ const ItemCount = ({ stock, initial, addToCart, item , addToCartContext}) => {
           }
           disabled={count > 0 && count <= stock ? false : true}
           onClick={() => {
-            addToCart()
-            setCartState([...cartState, item])
+            addToCart();
+            addItemToCart(item, count);
+            setQtyAdded(count);
           }}
         >
           Add to Cart
