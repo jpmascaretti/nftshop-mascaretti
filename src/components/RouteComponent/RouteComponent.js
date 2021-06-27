@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
-import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import Cart from "../Cart/Cart";
 
 const RouteComponent = () => {
   return (
@@ -18,7 +18,7 @@ const RouteComponent = () => {
           <ItemDetailContainer />
         </Route>
         <Route path="/cart">
-          <ShoppingCart/>
+          <Cart/>
         </Route>
       </Switch>
     </div>

@@ -45,7 +45,7 @@ const CartContext = (props) => {
   console.log(cartState)
 
   return (
-    <ModeContext.Provider value={{removeCartItem, addItemToCart}}>
+    <ModeContext.Provider value={{removeCartItem, addItemToCart, cartState}}>
       {props.children}
     </ModeContext.Provider>
   );

@@ -1,11 +1,21 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { ModeContext } from '../CartContext/CartContext'
 import './Cart.css'
 
 const Cart = () => {
+    const {cartState} = useContext(ModeContext)
+
     return (
-        <div className="temporary__cart">
-            Hey! You are in the Cart
-        </div>
+        <ul>
+        {cartState.forEach(element => {
+            
+        })((element, i) => {
+            if (typeof(element)==='object') {
+                return <li key={i}>Item: </li>
+            }
+            // <li key={i} properties={element} />
+        })}
+        </ul>
     )
 }
 
