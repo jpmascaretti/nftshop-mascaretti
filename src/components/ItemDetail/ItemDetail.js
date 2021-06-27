@@ -5,35 +5,6 @@ import "../ItemCount/ItemCount.css";
 import "./ItemDetail.css";
 import CartPurchaseButtons from "../CartPurchaseButtons/CartPurchaseButtons";
 
-const CustomButtonContainer = ({
-  component: CartActionButton,
-  addToCart,
-  cancel,
-  item,
-  setQtyAdded,
-  quantityAdded,
-}) => {
-  if (CartActionButton === ItemCount) {
-    return (
-      <CartActionButton
-        stock={5}
-        initial={1}
-        addToCart={addToCart}
-        item={item}
-        setQtyAdded={setQtyAdded}
-      />
-    );
-  } else {
-    return (
-      <CartActionButton
-        cancelPurchase={cancel}
-        item={item}
-        quantityAdded={quantityAdded}
-      />
-    );
-  }
-};
-
 const ItemDetail = ({ item }) => {
   const [addedToCart, setAddedToCart] = useState(false);
   const [qtyAdded, setQtyAdded] = useState(0);
@@ -65,14 +36,21 @@ const ItemDetail = ({ item }) => {
           USD
         </Card.Text>
         <Card.Footer className="card__footer--background">
-          <CustomButtonContainer
-            component={addedToCart ? CartPurchaseButtons : ItemCount}
-            addToCart={addToCart}
-            cancel={cancelCart}
-            item={item}
-            setQtyAdded={setQtyAdded}
-            quantityAdded={qtyAdded}
-          />
+          {addedToCart ? (
+            <CartPurchaseButtons
+              cancelPurchase={cancelCart}
+              item={item}
+              quantityAdded={qtyAdded}
+            />
+          ) : (
+            <ItemCount
+              stock={5}
+              initial={1}
+              addToCart={addToCart}
+              item={item}
+              setQtyAdded={setQtyAdded}
+            />
+          )}
         </Card.Footer>
       </Card.Body>
     </Card>

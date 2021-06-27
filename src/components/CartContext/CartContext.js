@@ -1,16 +1,51 @@
-import React, { useEffect, useState, createContext } from "react";
+import React, {useState, createContext } from "react";
 
 export const ModeContext = createContext();
+
+
 
 const CartContext = (props) => {
   const [cartState, setCartState] = useState([]);
 
-  useEffect(() => {
-    console.log(cartState);
-  }, [cartState]);
+  function removeCartItem(itemForRemoval, qtyToBeRemoved) {
+    if (cartState.includes(itemForRemoval)) {
+      const currentQty = cartState[cartState.indexOf(itemForRemoval) + 1];
+      const cancellationQty = currentQty - qtyToBeRemoved;
+      if (cancellationQty > 0) {
+        const updatedCartQty = cartState;
+        updatedCartQty[cartState.indexOf(itemForRemoval) + 1] = cancellationQty;
+        setCartState([...updatedCartQty]);
+      } else {
+        const cartWithRemovedItem = cartState;
+        cartWithRemovedItem.splice(
+          cartWithRemovedItem.indexOf(itemForRemoval),
+          2
+        );
+        setCartState([...cartWithRemovedItem]);
+      }
+    }
+  }
+
+  function addItemToCart(cartItem, quantity, stock) {
+    if (
+      !cartState.includes(cartItem) &&
+      cartState[cartState.indexOf(cartItem) + 1] !== quantity
+    ) {
+      setCartState([...cartState, cartItem, quantity]);
+    } else if (cartState.includes(cartItem)) {
+      quantity = cartState[cartState.indexOf(cartItem) + 1] + quantity;
+      if (quantity <= stock) {
+        const updatedCart = cartState;
+        updatedCart[cartState.indexOf(cartItem) + 1] = quantity;
+        setCartState([...updatedCart]);
+      }
+    }
+  }
+
+  console.log(cartState)
 
   return (
-    <ModeContext.Provider value={[cartState, setCartState]}>
+    <ModeContext.Provider value={{removeCartItem, addItemToCart}}>
       {props.children}
     </ModeContext.Provider>
   );

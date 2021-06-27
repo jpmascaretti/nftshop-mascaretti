@@ -4,23 +4,7 @@ import { ModeContext } from "../CartContext/CartContext";
 
 const ItemCount = ({ stock, initial, addToCart, item, setQtyAdded }) => {
   const [count, setCount] = useState(initial);
-  const [cartState, setCartState] = useContext(ModeContext);
-
-  function addItemToCart(cartItem, quantity) {
-    if (
-      !cartState.includes(cartItem) &&
-      cartState[cartState.indexOf(cartItem) + 1] !== quantity
-    ) {
-      setCartState([...cartState, cartItem, quantity]);
-    } else if (cartState.includes(cartItem)) {
-      quantity = cartState[cartState.indexOf(cartItem) + 1] + quantity;
-      if (quantity <= stock) {
-        const updatedCart = cartState;
-        updatedCart[cartState.indexOf(cartItem) + 1] = quantity;
-        setCartState([...updatedCart]);
-      }
-    }
-  }
+  const {addItemToCart} = useContext(ModeContext)
 
   return (
     <>
@@ -59,7 +43,7 @@ const ItemCount = ({ stock, initial, addToCart, item, setQtyAdded }) => {
           disabled={count > 0 && count <= stock ? false : true}
           onClick={() => {
             addToCart();
-            addItemToCart(item, count);
+            addItemToCart(item, count, stock);
             setQtyAdded(count);
           }}
         >

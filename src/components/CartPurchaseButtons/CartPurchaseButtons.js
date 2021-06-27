@@ -4,26 +4,7 @@ import { ModeContext } from "../CartContext/CartContext";
 
 const CartPurchaseButtons = ({ cancelPurchase, item, quantityAdded }) => {
   const routeHistory = useHistory();
-  const [cartState, setCartState] = useContext(ModeContext);
-
-  function removeCartItem(itemForRemoval, qtyToBeRemoved) {
-    if (cartState.includes(itemForRemoval)) {
-      const currentQty = cartState[cartState.indexOf(itemForRemoval) + 1];
-      const cancellationQty = currentQty - qtyToBeRemoved;
-      if (cancellationQty > 0) {
-        const updatedCartQty = cartState;
-        updatedCartQty[cartState.indexOf(itemForRemoval) + 1] = cancellationQty;
-        setCartState([...updatedCartQty]);
-      } else {
-        const cartWithRemovedItem = cartState;
-        cartWithRemovedItem.splice(
-          cartWithRemovedItem.indexOf(itemForRemoval),
-          2
-        );
-        setCartState([...cartWithRemovedItem]);
-      }
-    }
-  }
+  const {removeCartItem} = useContext(ModeContext);
 
   return (
     <div className="button__container--center">
