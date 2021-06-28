@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
+import { ModeContext } from "../../CartContext/CartContext";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
+
+  const {cartState} = useContext(ModeContext);
+
   return (
     <>
       <Navbar
@@ -54,7 +58,7 @@ const Navigation = () => {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <CartWidget />
+          {cartState.length===0 ? null : <CartWidget />}
         </Container>
       </Navbar>
     </>

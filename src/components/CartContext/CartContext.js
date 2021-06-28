@@ -42,10 +42,19 @@ const CartContext = (props) => {
     }
   }
 
+  function removeItemFromCart(cartItemToRemove) {
+    const cartItemDeleted = cartState;
+    cartItemDeleted.splice(
+      cartItemDeleted.indexOf(cartItemToRemove),
+      2
+    );
+    setCartState([...cartItemDeleted]);
+  }
+
   console.log(cartState)
 
   return (
-    <ModeContext.Provider value={{removeCartItem, addItemToCart, cartState}}>
+    <ModeContext.Provider value={{removeCartItem, addItemToCart, removeItemFromCart , cartState}}>
       {props.children}
     </ModeContext.Provider>
   );
