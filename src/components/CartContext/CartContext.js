@@ -1,8 +1,6 @@
-import React, {useState, createContext } from "react";
+import React, { useState, createContext} from "react";
 
 export const ModeContext = createContext();
-
-
 
 const CartContext = (props) => {
   const [cartState, setCartState] = useState([]);
@@ -44,17 +42,21 @@ const CartContext = (props) => {
 
   function removeItemFromCart(cartItemToRemove) {
     const cartItemDeleted = cartState;
-    cartItemDeleted.splice(
-      cartItemDeleted.indexOf(cartItemToRemove),
-      2
-    );
+    cartItemDeleted.splice(cartItemDeleted.indexOf(cartItemToRemove), 2);
     setCartState([...cartItemDeleted]);
   }
 
-  console.log(cartState)
+  console.log(cartState);
 
   return (
-    <ModeContext.Provider value={{removeCartItem, addItemToCart, removeItemFromCart , cartState}}>
+    <ModeContext.Provider
+      value={{
+        removeCartItem,
+        addItemToCart,
+        removeItemFromCart,
+        cartState,
+      }}
+    >
       {props.children}
     </ModeContext.Provider>
   );
