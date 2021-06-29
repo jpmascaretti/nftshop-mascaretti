@@ -14,7 +14,7 @@ const CartPurchaseButtons = ({ cancelPurchase, item, quantityAdded }) => {
           routeHistory.push("/cart");
         }}
       >
-        Finish Purchase
+        Go To Cart
       </button>
       <button
         className="button__cancel"

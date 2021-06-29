@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 import "./ItemCount.css";
 import { ModeContext } from "../CartContext/CartContext";
+import { Button } from "react-bootstrap";
+
 
 const ItemCount = ({ stock, initial, addToCart, item, setQtyAdded }) => {
   const [count, setCount] = useState(initial);
-  const {addItemToCart} = useContext(ModeContext)
+  const { addItemToCart } = useContext(ModeContext);
 
   return (
     <>
@@ -34,7 +36,7 @@ const ItemCount = ({ stock, initial, addToCart, item, setQtyAdded }) => {
         </button>
       </div>
       <div className="button__wrapper--second">
-        <button
+        <Button
           className={
             count > 0 && count <= stock
               ? "button__add-to-cart"
@@ -48,7 +50,7 @@ const ItemCount = ({ stock, initial, addToCart, item, setQtyAdded }) => {
           }}
         >
           Add to Cart
-        </button>
+        </Button>
       </div>
     </>
   );

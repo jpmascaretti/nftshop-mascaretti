@@ -1,4 +1,4 @@
-import React, { useState, createContext} from "react";
+import React, { useState, createContext } from "react";
 
 export const ModeContext = createContext();
 
@@ -46,7 +46,6 @@ const CartContext = (props) => {
     setCartState([...cartItemDeleted]);
   }
 
-  console.log(cartState);
 
   return (
     <ModeContext.Provider

@@ -2,10 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { ModeContext } from "../CartContext/CartContext";
 import CartItem from "../CartItem/CartItem";
+import { CardGroup } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+
 import "./Cart.css";
 
 const Cart = () => {
-  const { cartState, removeItemFromCart } = useContext(ModeContext);
+  const { cartState} = useContext(ModeContext);
 
   const routeHistory = useHistory();
 
@@ -26,23 +29,23 @@ const Cart = () => {
 
   return cartState.length === 0 ? (
     <div className="cart__noitems">
-      <h1>Your Cart is Empty</h1>
-      <button onClick={(e) => routeHistory.push("/")}>Back to NFT Shop</button>
+      <h1 className="cart__noitems--header" >Your Cart is Empty</h1>
+      <Button variant="primary" onClick={(e) => routeHistory.push("/")}>Back to NFT Shop</Button>
     </div>
   ) : (
-    <div>
+    <React.Fragment>
+    <CardGroup className="card-group">
       {cartState.map((element, i) =>
         typeof element === "object" ? (
-          <React.Fragment key={i}>
+          <div key={i}>
             <CartItem element={element} cartState={cartState} />
-            <button onClick={() => removeItemFromCart(element)}>
-              Remove Item
-            </button>
-          </React.Fragment>
+          </div>
         ) : null
       )}
-      <div>Grand Total: {cartSummative}.000 ETH</div>
-    </div>
+    </CardGroup>
+    <div className="grand__total--font"> Grand Total: {cartSummative}.000 ETH = $ {cartSummative*2127.96} USD</div>
+    </React.Fragment>
+
   );
 };
 

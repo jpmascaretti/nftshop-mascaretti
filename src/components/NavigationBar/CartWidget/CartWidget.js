@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import { Cart3 } from "react-bootstrap-icons";
 import { ModeContext } from "../../CartContext/CartContext";
 import "./CartWidget.css";
+import { Link } from "react-router-dom";
+
 
 function CartWidget() {
   const { cartState } = useContext(ModeContext);
@@ -18,14 +20,13 @@ function CartWidget() {
     });
   }, [cartState]);
 
-  //Note: need to add styling when number > 9 - easy conditional rendering with css class
   return (
-    <a href="/cart">
+    <Link to="/cart">
       <Cart3 id="cart__style" />
       <span id="dot">
-        <p id="dot_number">{cartTotalQuantity}</p>
+        <p id={cartTotalQuantity < 10 ? "dot__number" : "dot__number--twodigits"}>{cartTotalQuantity}</p>
       </span>
-    </a>
+    </Link>
   );
 }
 

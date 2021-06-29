@@ -23,9 +23,17 @@
   transform: scale(1.2);
 }
 
-#dot_number {
+#dot__number {
   position: relative;
   color: white;
   font-weight: bold;
   top: -0.35rem;
+}
+
+#dot__number--twodigits {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  top: -0.35rem;
+  left: -0.2rem
 }
