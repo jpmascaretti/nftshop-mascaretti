@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {db} from '../../firebase/firebase';
 
 
