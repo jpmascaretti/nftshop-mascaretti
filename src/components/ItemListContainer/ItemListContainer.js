@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { nftItems } from "../../products/products";
 import { useParams } from "react-router-dom";
+import { dataBase } from '../../firebase/firebase'
 
 const getProducts = () => {
   const itemPromise = new Promise((resolve, reject) => {
