@@ -1,31 +1,27 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import { nftItems } from "../../products/products";
 import { useParams } from "react-router-dom";
-import { dataBase } from '../../firebase/firebase'
+import { db } from '../../firebase/firebase'
 
-const getProducts = () => {
-  const itemPromise = new Promise((resolve, reject) => {
-    setTimeout(resolve(nftItems), 2000);
-  });
-  return itemPromise;
-};
 
 const ItemListContainer = (props) => {
-  const [itemsFromPromise, setData] = useState([]);
+  const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
 
   useEffect(() => {
-    getProducts().then((product) => {
+
+    const itemCollection = db.collection("nftproducts");
+    itemCollection.get().then((productQuery) => {
+      productQuery.docs.map(doc => ({id: doc.id, ...doc.data()}))
       if (categoryId === undefined) {
-        setData(product);
+        setProducts(productQuery.docs.map(doc => ({id: doc.id, ...doc.data()})));
       } else {
-        setData(product.filter((nftItem) => nftItem.category === categoryId));
+        setProducts(productQuery.docs.map(doc => ({id: doc.id, ...doc.data()})).filter((nftItem) => nftItem.category === categoryId));
       }
-    });
+    })
   }, [categoryId]);
 
-  return <ItemList items={itemsFromPromise} />;
+  return <ItemList items={products} />;
 };
 
 export default ItemListContainer;

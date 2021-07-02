@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { nftItems } from "../../products/products";
-import { useParams } from "react-router-dom";
-
-const getItems = () => {
-  const singleProd = new Promise((resolve, reject) => {
-    setTimeout(resolve(nftItems), 2000);
-  });
-  return singleProd;
-};
+import { useParams, Link } from "react-router-dom";
+import {db} from '../../firebase/firebase';
 
 
 const ItemDetailContainer = () => {
@@ -16,15 +9,13 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    getItems().then((product) => {
-      if (id === undefined) {
-        setSingleProduct(product);
-      } else {
-        setSingleProduct(
-          product.find((nftItem) => nftItem.id === parseInt(id))
-        );
-      }
-    });
+    const itemCollection = db.collection("nftproducts");
+    const item = itemCollection.doc(id);
+
+    item.get().then((product) => {
+          setSingleProduct({id: product.id, ...product.data()});
+    })
+    //Need to add case when no items exist /id/9 or something
   }, [id]);
 
   return <ItemDetail item={singleProduct}/>;

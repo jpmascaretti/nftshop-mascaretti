@@ -3,7 +3,7 @@ import Item from "../Item/Item";
 import "./ItemList.css";
 import { CardColumns } from "react-bootstrap";
 
-const ItemList = ({ items}) => {
+const ItemList = ({items}) => {
 
   return (
     <CardColumns className="card__grid--layout">
