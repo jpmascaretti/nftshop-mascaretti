@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { ModeContext } from "../CartContext/CartContext";
+import { ModeContext } from "../Context/CartContext/CartContext";
 
 const CartPurchaseButtons = ({ cancelPurchase, item, quantityAdded }) => {
   const routeHistory = useHistory();

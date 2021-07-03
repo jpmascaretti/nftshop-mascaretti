@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { ModeContext } from "../CartContext/CartContext";
+import { ModeContext } from "../Context/CartContext/CartContext";
 import CartItem from "../CartItem/CartItem";
 import { CardGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";

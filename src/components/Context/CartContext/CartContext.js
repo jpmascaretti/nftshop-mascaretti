@@ -10,11 +10,11 @@ const CartContext = (props) => {
       const currentQty = cartState[cartState.indexOf(itemForRemoval) + 1];
       const cancellationQty = currentQty - qtyToBeRemoved;
       if (cancellationQty > 0) {
-        const updatedCartQty = cartState;
+        const updatedCartQty = [...cartState];
         updatedCartQty[cartState.indexOf(itemForRemoval) + 1] = cancellationQty;
         setCartState([...updatedCartQty]);
       } else {
-        const cartWithRemovedItem = cartState;
+        const cartWithRemovedItem = [...cartState];
         cartWithRemovedItem.splice(
           cartWithRemovedItem.indexOf(itemForRemoval),
           2
@@ -33,7 +33,7 @@ const CartContext = (props) => {
     } else if (cartState.includes(cartItem)) {
       quantity = cartState[cartState.indexOf(cartItem) + 1] + quantity;
       if (quantity <= stock) {
-        const updatedCart = cartState;
+        const {updatedCart} = [...cartState];
         updatedCart[cartState.indexOf(cartItem) + 1] = quantity;
         setCartState([...updatedCart]);
       }
@@ -41,7 +41,7 @@ const CartContext = (props) => {
   }
 
   function removeItemFromCart(cartItemToRemove) {
-    const cartItemDeleted = cartState;
+    const cartItemDeleted = [...cartState];
     cartItemDeleted.splice(cartItemDeleted.indexOf(cartItemToRemove), 2);
     setCartState([...cartItemDeleted]);
   }

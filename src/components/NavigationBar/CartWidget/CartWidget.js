@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Cart3 } from "react-bootstrap-icons";
-import { ModeContext } from "../../CartContext/CartContext";
+import { ModeContext } from "../../Context/CartContext/CartContext";
 import "./CartWidget.css";
 import { Link } from "react-router-dom";
 

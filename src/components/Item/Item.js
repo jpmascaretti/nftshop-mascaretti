@@ -5,7 +5,7 @@ import "../ItemCount/ItemCount.css";
 import "./Item.css";
 
 const Item = ({ properties }) => {
-  console.log(properties.id)
+  
   return (
     <Card className="card__width--property">
       <Link to={`/item/${properties.id}`}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { db } from '../../firebase/firebase'
 
 
@@ -19,9 +19,19 @@ const ItemListContainer = (props) => {
         setProducts(productQuery.docs.map(doc => ({id: doc.id, ...doc.data()})).filter((nftItem) => nftItem.category === categoryId));
       }
     })
+    console.log(typeof(categoryId))
   }, [categoryId]);
 
-  return <ItemList items={products} />;
+
+  if (categoryId === undefined) {
+    return <ItemList items={products} />;
+  } else if (categoryId === "common" || categoryId === "rare" || categoryId === "epic" || categoryId === "legendary" ) {
+    return <ItemList items={products} />;
+  } else {
+    return <Redirect to="/"/>
+  }
+
+
 };
 
 export default ItemListContainer;

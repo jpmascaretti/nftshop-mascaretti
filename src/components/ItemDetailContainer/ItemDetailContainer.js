@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams} from "react-router-dom";
+import { useParams, Redirect} from "react-router-dom";
 import {db} from '../../firebase/firebase';
 
 
 const ItemDetailContainer = () => {
   const [singleProduct, setSingleProduct] = useState([]);
   const { id } = useParams();
+
 
   useEffect(() => {
     const itemCollection = db.collection("nftproducts");
@@ -15,10 +16,9 @@ const ItemDetailContainer = () => {
     item.get().then((product) => {
           setSingleProduct({id: product.id, ...product.data()});
     })
-    //Need to add case when no items exist /id/9 or something
   }, [id]);
 
-  return <ItemDetail item={singleProduct}/>;
+  return id > 0 && id < 7 ? <ItemDetail item={singleProduct}/> : <Redirect to="/"/>;
 };
 
 export default ItemDetailContainer;
