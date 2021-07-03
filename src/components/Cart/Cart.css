@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center!;
-    margin: 2rem;
+    margin: 0.5rem;
     flex-direction: column !important; 
 }
 
@@ -28,4 +28,33 @@
 
 .cart__noitems--header {
     font-family: "Audiowide", "cursive";
+}
+
+.form__width {
+    margin-top: 2vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__div--width {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__bottom-div {
+    height: 2vh;
+}
+
+.form__middle-div {
+    height: 4vh;
+}
+
+.form__top-div {
+    height: 6vh;
+}
+
+.form__btn {
+    align-self: center;
 }
