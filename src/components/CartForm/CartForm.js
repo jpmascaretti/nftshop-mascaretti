@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect} from "react";
+import React, { useState, useContext} from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { ModeContext } from "../Context/CartContext/CartContext";
@@ -11,7 +11,6 @@ const CartForm = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
-  const [cartOrder, setCartOrder] = useState({});
 
   const orders = db.collection("orders");
   const routeHistory = useHistory();
@@ -29,10 +28,15 @@ const CartForm = () => {
     setUserPhone(event.target.value);
   }
 
+  const order = {
+    buyer: { name: userName, email: userEmail, phone: userPhone },
+    items: [...cartState],
+    date: firebase.firestore.Timestamp.fromDate(new Date()),
+  }
+
   function addOrder() {
-    if (cartOrder !== {}) {
         orders
-        .add(cartOrder)
+        .add(order)
         .then(({ id }) => {
         //clean up cart context
         routeHistory.push(`/order/${id}`)
@@ -40,7 +44,6 @@ const CartForm = () => {
         .catch((err) => {
         console.log("An error occured when processing order");
         });
-      }
     }
 
 
@@ -80,11 +83,7 @@ const CartForm = () => {
         className="form__btn"
         variant="primary"
         onClick={() => {
-          setCartOrder({
-            buyer: { name: userName, email: userEmail, phone: userPhone },
-            items: [...cartState],
-            date: firebase.firestore.Timestamp.fromDate(new Date()),
-          })
+            addOrder()
         }}
       >
         Confirm Purchase
