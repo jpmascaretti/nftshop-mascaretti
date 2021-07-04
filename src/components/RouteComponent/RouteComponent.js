@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+import OrderConfirmation from "../OrderConfirmation/OrderConfirmation"
 import Cart from "../Cart/Cart";
 
 const RouteComponent = () => {
@@ -19,6 +20,9 @@ const RouteComponent = () => {
         </Route>
         <Route path="/cart">
           <Cart/>
+        </Route>
+        <Route path="/order/:orderId">
+          <OrderConfirmation/>
         </Route>
       </Switch>
     </div>

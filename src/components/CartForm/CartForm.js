@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext, useEffect} from "react";
+import { useHistory } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { ModeContext } from "../Context/CartContext/CartContext";
-import firebase from 'firebase/app';
-import 'firebase/firestore'
-import {db} from '../../firebase/firebase'
-// import { useHistory } from "react-router-dom";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
 const CartForm = () => {
   const { cartState } = useContext(ModeContext);
@@ -13,7 +13,9 @@ const CartForm = () => {
   const [userPhone, setUserPhone] = useState("");
   const [cartOrder, setCartOrder] = useState({});
 
-  const orders = db.collection('orders');
+  const orders = db.collection("orders");
+  const routeHistory = useHistory();
+
 
   function userEmailHandler(event) {
     setUserEmail(event.target.value);
@@ -27,9 +29,20 @@ const CartForm = () => {
     setUserPhone(event.target.value);
   }
 
-  useEffect(() => {
-    console.log(cartOrder);
-  }, [cartOrder]);
+  function addOrder() {
+    if (cartOrder !== {}) {
+        orders
+        .add(cartOrder)
+        .then(({ id }) => {
+        //clean up cart context
+        routeHistory.push(`/order/${id}`)
+        })
+        .catch((err) => {
+        console.log("An error occured when processing order");
+        });
+      }
+    }
+
 
   return (
     <Form className="form__width">
@@ -40,7 +53,6 @@ const CartForm = () => {
           value={userName}
           onChange={(nameEvent) => userNameHandler(nameEvent)}
           placeholder="Name"
-          min="1"
         />
       </Form.Group>
       <Form.Group controlId="formBasicEmail">
@@ -50,7 +62,6 @@ const CartForm = () => {
           value={userEmail}
           onChange={(emailEvent) => userEmailHandler(emailEvent)}
           placeholder="Enter email"
-          min="1"
         />
         <Form.Text className="text-muted">
           Your email will be kept private
@@ -63,7 +74,6 @@ const CartForm = () => {
           value={userPhone}
           onChange={(phoneEvent) => userPhoneHandler(phoneEvent)}
           placeholder="Phone"
-          min="1"
         />
       </Form.Group>
       <Button
@@ -74,7 +84,7 @@ const CartForm = () => {
             buyer: { name: userName, email: userEmail, phone: userPhone },
             items: [...cartState],
             date: firebase.firestore.Timestamp.fromDate(new Date()),
-          });
+          })
         }}
       >
         Confirm Purchase
