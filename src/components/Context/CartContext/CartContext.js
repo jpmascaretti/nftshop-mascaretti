@@ -53,6 +53,7 @@ const CartContext = (props) => {
         removeCartItem,
         addItemToCart,
         removeItemFromCart,
+        setCartState,
         cartState,
       }}
     >

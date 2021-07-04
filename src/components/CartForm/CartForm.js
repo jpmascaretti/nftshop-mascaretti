@@ -7,7 +7,7 @@ import "firebase/firestore";
 import { db } from "../../firebase/firebase";
 
 const CartForm = () => {
-  const { cartState } = useContext(ModeContext);
+  const { cartState, setCartState } = useContext(ModeContext);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
@@ -38,7 +38,9 @@ const CartForm = () => {
         orders
         .add(order)
         .then(({ id }) => {
-        //clean up cart context
+        //Need to work on stock for each item and update them accordingly
+        //Need to add not found page
+        setCartState([])
         routeHistory.push(`/order/${id}`)
         })
         .catch((err) => {
