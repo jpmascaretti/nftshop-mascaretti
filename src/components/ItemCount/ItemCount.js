@@ -3,7 +3,6 @@ import "./ItemCount.css";
 import { ModeContext } from "../Context/CartContext/CartContext";
 import { Button } from "react-bootstrap";
 
-
 const ItemCount = ({ initial, addToCart, item, setQtyAdded }) => {
   const [count, setCount] = useState(initial);
   const { addItemToCart } = useContext(ModeContext);
@@ -17,12 +16,12 @@ const ItemCount = ({ initial, addToCart, item, setQtyAdded }) => {
               ? "button__count"
               : "button__count--disabled"
           }
-          disabled={count < initial}
+          disabled={count <= initial}
           onClick={() => count > 0 && setCount(count - 1)}
         >
           -
         </button>
-        <h1>{count}</h1>
+        <h1>{item.stock <= 0 ? 0 : count}</h1>
         <button
           className={
             count < item.stock && count >= 0
@@ -49,7 +48,7 @@ const ItemCount = ({ initial, addToCart, item, setQtyAdded }) => {
             setQtyAdded(count);
           }}
         >
-          Add to Cart
+          {item.stock <= 0 ? "Out of Stock" : "Add to Cart"}
         </Button>
       </div>
     </>

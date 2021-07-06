@@ -4,7 +4,7 @@ import { ModeContext } from "../Context/CartContext/CartContext";
 
 const CartPurchaseButtons = ({ cancelPurchase, item, quantityAdded }) => {
   const routeHistory = useHistory();
-  const {removeCartItem} = useContext(ModeContext);
+  const { removeCartItem } = useContext(ModeContext);
 
   return (
     <div className="button__container--center">

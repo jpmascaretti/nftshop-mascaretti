@@ -1,29 +1,30 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import "./CartItem.css";
 import { ModeContext } from "../Context/CartContext/CartContext";
 
-
-const CartItem = ({ element, cartState}) => {
-    const { removeItemFromCart } = useContext(ModeContext);
+const CartItem = ({ element, cartState }) => {
+  const { removeItemFromCart } = useContext(ModeContext);
 
   return (
     <Card className="card-group" style={{ width: "18rem" }}>
       <Card.Img variant="top" src={element.pictureUrl} />
       <Card.Body>
         <Card.Title>{element.title}</Card.Title>
-          <ul className="unordered_list-cart">
-            <li>Price: {element.price}.000 ETH</li>
-            <li>Quantity: x {cartState[cartState.indexOf(element) + 1]}</li>
-            <br></br>
-            <li className="item__total"> 
-              Total: {element.price * cartState[cartState.indexOf(element) + 1]}
-              .000 ETH
-            </li>
-          </ul>
+        <ul className="unordered_list-cart">
+          <li>Price: {element.price}.000 ETH</li>
+          <li>Quantity: x {cartState[cartState.indexOf(element) + 1]}</li>
           <br></br>
-          <br></br>
-        <Button variant="danger" onClick={() => removeItemFromCart(element)}>Remove From Cart</Button>
+          <li className="item__total">
+            Total: {element.price * cartState[cartState.indexOf(element) + 1]}
+            .000 ETH
+          </li>
+        </ul>
+        <br></br>
+        <br></br>
+        <Button variant="danger" onClick={() => removeItemFromCart(element)}>
+          Remove From Cart
+        </Button>
       </Card.Body>
     </Card>
   );

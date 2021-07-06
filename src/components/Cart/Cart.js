@@ -3,20 +3,17 @@ import { useHistory } from "react-router-dom";
 import { ModeContext } from "../Context/CartContext/CartContext";
 import CartItem from "../CartItem/CartItem";
 import { CardGroup } from "react-bootstrap";
-import { Button} from "react-bootstrap";
-import CartForm from '../CartForm/CartForm'
-
+import { Button } from "react-bootstrap";
+import CartForm from "../CartForm/CartForm";
 
 import "./Cart.css";
 
 const Cart = () => {
-  
   const { cartState } = useContext(ModeContext);
 
   const routeHistory = useHistory();
 
   const [cartSummative, setCartGrandTotal] = useState(0);
-
 
   useEffect(() => {
     let cartGrandTotal = 0;
@@ -56,7 +53,7 @@ const Cart = () => {
       </div>
       <div className="form__middle-div"></div>
       <div className="form__div--width">
-      <CartForm/>
+        <CartForm />
       </div>
     </React.Fragment>
   );

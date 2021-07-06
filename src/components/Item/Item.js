@@ -5,7 +5,6 @@ import "../ItemCount/ItemCount.css";
 import "./Item.css";
 
 const Item = ({ properties }) => {
-  
   return (
     <Card className="card__width--property">
       <Link to={`/item/${properties.id}`}>

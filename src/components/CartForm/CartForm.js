@@ -45,27 +45,17 @@ const CartForm = () => {
       const batch = db.batch();
       const outOfStock = [];
       querySnapshot.docs.forEach((documentSnapshot, docIndex) => {
-        // console.log(docIndex)
-        if (
-          documentSnapshot.data().stock >=
+        const stockQuantity =
           cartState[
             cartState
               .map(function (e) {
                 return e.title;
               })
               .indexOf(documentSnapshot.data().title) + 1
-          ]
-        ) {
+          ];
+        if (documentSnapshot.data().stock >= stockQuantity) {
           batch.update(documentSnapshot.ref, {
-            stock:
-              documentSnapshot.data().stock -
-              cartState[
-                cartState
-                  .map(function (e) {
-                    return e.title;
-                  })
-                  .indexOf(documentSnapshot.data().title) + 1
-              ],
+            stock: documentSnapshot.data().stock - stockQuantity,
           });
         } else {
           outOfStock.push({
@@ -90,13 +80,12 @@ const CartForm = () => {
     orders
       .add(order)
       .then(({ id }) => {
-        //Prettify everything
-        //Need to add not found page
         updateStock();
         setCartState([]);
         routeHistory.push(`/order/${id}`);
       })
       .catch((err) => {
+        console.log(err);
         console.log("An error occured when processing order");
       });
   }

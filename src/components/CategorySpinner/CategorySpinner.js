@@ -1,6 +1,6 @@
 import React from "react";
-import {Spinner} from 'react-bootstrap'
-import './CategorySpinner.css'
+import { Spinner } from "react-bootstrap";
+import "./CategorySpinner.css";
 
 const CategorySpinner = () => {
   return (
