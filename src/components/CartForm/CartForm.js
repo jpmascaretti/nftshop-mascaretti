@@ -1,4 +1,4 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { ModeContext } from "../Context/CartContext/CartContext";
@@ -11,10 +11,18 @@ const CartForm = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
+  const [stockItemsIds, setStockItemsIds] = useState([]);
 
   const orders = db.collection("orders");
   const routeHistory = useHistory();
 
+  useEffect(() => {
+    const itemsArray = cartState
+      .map((nftcard) => nftcard.id)
+      .filter((values) => values !== undefined);
+    const singleItemIndexes = [...new Set(itemsArray)];
+    setStockItemsIds(singleItemIndexes);
+  }, [cartState]);
 
   function userEmailHandler(event) {
     setUserEmail(event.target.value);
@@ -28,26 +36,70 @@ const CartForm = () => {
     setUserPhone(event.target.value);
   }
 
+  function updateStock() {
+    const itemsToUpdate = db
+      .collection("nftproducts")
+      .where(firebase.firestore.FieldPath.documentId(), "in", stockItemsIds);
+
+    itemsToUpdate.get().then((querySnapshot) => {
+      const batch = db.batch();
+      const outOfStock = [];
+      querySnapshot.docs.forEach((documentSnapshot, docIndex) => {
+        // console.log(docIndex)
+        if (
+          documentSnapshot.data().stock >=
+          cartState[
+            cartState
+              .map(function (e) {
+                return e.title;
+              })
+              .indexOf(documentSnapshot.data().title) + 1
+          ]
+        ) {
+          batch.update(documentSnapshot.ref, {
+            stock:
+              documentSnapshot.data().stock -
+              cartState[
+                cartState
+                  .map(function (e) {
+                    return e.title;
+                  })
+                  .indexOf(documentSnapshot.data().title) + 1
+              ],
+          });
+        } else {
+          outOfStock.push({
+            ...documentSnapshot.data(),
+            id: documentSnapshot.id,
+          });
+        }
+      });
+      if (outOfStock.length === 0) {
+        batch.commit();
+      }
+    });
+  }
+
   const order = {
     buyer: { name: userName, email: userEmail, phone: userPhone },
     items: [...cartState],
     date: firebase.firestore.Timestamp.fromDate(new Date()),
-  }
+  };
 
   function addOrder() {
-        orders
-        .add(order)
-        .then(({ id }) => {
-        //Need to work on stock for each item and update them accordingly
+    orders
+      .add(order)
+      .then(({ id }) => {
+        //Prettify everything
         //Need to add not found page
-        setCartState([])
-        routeHistory.push(`/order/${id}`)
-        })
-        .catch((err) => {
+        updateStock();
+        setCartState([]);
+        routeHistory.push(`/order/${id}`);
+      })
+      .catch((err) => {
         console.log("An error occured when processing order");
-        });
-    }
-
+      });
+  }
 
   return (
     <Form className="form__width">
@@ -85,7 +137,7 @@ const CartForm = () => {
         className="form__btn"
         variant="primary"
         onClick={() => {
-            addOrder()
+          addOrder();
         }}
       >
         Confirm Purchase

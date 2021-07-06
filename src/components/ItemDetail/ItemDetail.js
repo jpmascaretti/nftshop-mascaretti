@@ -44,7 +44,6 @@ const ItemDetail = ({ item }) => {
             />
           ) : (
             <ItemCount
-              stock={5}
               initial={1}
               addToCart={addToCart}
               item={item}
