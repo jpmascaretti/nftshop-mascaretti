@@ -19,35 +19,15 @@ const ItemListContainer = (props) => {
           productQuery.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
         );
       }).then(() => setLoading(false))
-    } else if (categoryId === "common") {
-      const commonItems = itemCollection.where("category", "==", "common");
-      commonItems.get().then((productQuery) => {
+    } else {
+      const categoryItems = itemCollection.where("category", "==", `${categoryId}`);
+      categoryItems.get().then((productQuery) => {
         setProducts(
           productQuery.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
         );
       }).then(() => setLoading(false))
-    } else if (categoryId === "rare") {
-      const rareItems = itemCollection.where("category", "==", "rare");
-      rareItems.get().then((productQuery) => {
-        setProducts(
-          productQuery.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
-      }).then(() => setLoading(false))
-    } else if (categoryId === "epic") {
-      const epicItems = itemCollection.where("category", "==", "epic");
-      epicItems.get().then((productQuery) => {
-        setProducts(
-          productQuery.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
-      }).then(() => setLoading(false))
-    } else if (categoryId === "legendary") {
-      const legendaryItems = itemCollection.where("category", "==", "legendary");
-      legendaryItems.get().then((productQuery) => {
-        setProducts(
-          productQuery.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
-      }).then(() => setLoading(false))
-    }
+    } 
+
   }, [categoryId]);
 
   if (categoryId === undefined) {
