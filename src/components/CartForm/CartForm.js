@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
-import { ModeContext } from "../Context/CartContext/CartContext";
+import { ModeContext } from "../../CartContext/CartContext";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { db } from "../../firebase/firebase";

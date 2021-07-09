@@ -10,7 +10,6 @@ const Navigation = () => {
   const {cartState} = useContext(ModeContext);
 
   return (
-    <>
       <Navbar
         className="custom__navbar"
         collapseOnSelect
@@ -61,7 +60,6 @@ const Navigation = () => {
           {cartState.length===0 ? null : <CartWidget />}
         </Container>
       </Navbar>
-    </>
   );
 };
 

@@ -7,7 +7,6 @@ import Cart from "../Cart/Cart";
 
 const RouteComponent = () => {
   return (
-    <div>
       <Switch>
         <Route exact path="/">
           <ItemListContainer />
@@ -25,7 +24,7 @@ const RouteComponent = () => {
           <OrderConfirmation/>
         </Route>
       </Switch>
-    </div>
+
   );
 };
 

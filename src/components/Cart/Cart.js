@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { ModeContext } from "../Context/CartContext/CartContext";
+import { ModeContext } from "../../CartContext/CartContext";
 import CartItem from "../CartItem/CartItem";
 import { CardGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";
@@ -17,7 +17,6 @@ const Cart = () => {
 
   useEffect(() => {
     let cartGrandTotal = 0;
-
     cartState.forEach((cartItem) => {
       if (typeof cartItem === "object") {
         cartGrandTotal =
