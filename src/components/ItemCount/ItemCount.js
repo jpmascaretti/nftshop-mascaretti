@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./ItemCount.css";
-import { ModeContext } from "../Context/CartContext/CartContext";
+import { ModeContext } from "../../context/CartContext/CartContext";
 import { Button } from "react-bootstrap";
 
 const ItemCount = ({ initial, addToCart, item, setQtyAdded }) => {

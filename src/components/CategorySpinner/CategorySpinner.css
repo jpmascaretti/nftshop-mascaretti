@@ -1,8 +1,8 @@
 .spinner__loading {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    margin-left: 50vw;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: 50vw;
+  width: 100vw;
+  height: 100vh;
 }

@@ -10,51 +10,51 @@
 }
 
 .card-group {
-    display: flex;
-    align-items: center;
-    justify-content: center!;
-    margin: 0.5rem;
-    flex-direction: column !important; 
+  display: flex;
+  align-items: center;
+  justify-content: center!;
+  margin: 0.5rem;
+  flex-direction: column !important;
 }
 
 .grand__total--font {
-    font-weight: bold ;
-    color: black ;
-    position: absolute;
-    width: 100vw;
-    font-size: 1.5rem;
-    text-align: center; 
+  font-weight: bold;
+  color: black;
+  position: absolute;
+  width: 100vw;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .cart__noitems--header {
-    font-family: "Audiowide", "cursive";
+  font-family: "Audiowide", "cursive";
 }
 
 .form__width {
-    margin-top: 2vh;
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
+  margin-top: 2vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .form__div--width {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form__bottom-div {
-    height: 2vh;
+  height: 2vh;
 }
 
 .form__middle-div {
-    height: 4vh;
+  height: 4vh;
 }
 
 .form__top-div {
-    height: 6vh;
+  height: 6vh;
 }
 
 .form__btn {
-    align-self: center;
+  align-self: center;
 }

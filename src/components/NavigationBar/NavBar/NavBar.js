@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
-import { ModeContext } from "../../Context/CartContext/CartContext";
+import { ModeContext } from "../../../context/CartContext/CartContext";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 

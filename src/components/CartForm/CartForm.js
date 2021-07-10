@@ -1,20 +1,19 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
-import { ModeContext } from "../../CartContext/CartContext";
+import { ModeContext } from "../../context/CartContext/CartContext";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { db } from "../../firebase/firebase";
 
 const CartForm = () => {
   const { cartState, setCartState } = useContext(ModeContext);
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userPhone, setUserPhone] = useState("");
   const [stockItemsIds, setStockItemsIds] = useState([]);
-
-  const orders = db.collection("orders");
-  const routeHistory = useHistory();
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
 
   useEffect(() => {
     const itemsArray = cartState
@@ -24,16 +23,14 @@ const CartForm = () => {
     setStockItemsIds(singleItemIndexes);
   }, [cartState]);
 
-  function userEmailHandler(event) {
-    setUserEmail(event.target.value);
-  }
+  const orders = db.collection("orders");
+  const routeHistory = useHistory();
 
-  function userNameHandler(event) {
-    setUserName(event.target.value);
-  }
-
-  function userPhoneHandler(event) {
-    setUserPhone(event.target.value);
+  function infoHandler(event) {
+    setUserInfo({
+      ...userInfo,
+      [event.target.name]: event.target.value,
+    });
   }
 
   function updateStock() {
@@ -70,13 +67,12 @@ const CartForm = () => {
     });
   }
 
-  const order = {
-    buyer: { name: userName, email: userEmail, phone: userPhone },
-    items: [...cartState],
-    date: firebase.firestore.Timestamp.fromDate(new Date()),
-  };
-
   function addOrder() {
+    const order = {
+      buyer: { ...userInfo },
+      items: [...cartState],
+      date: firebase.firestore.Timestamp.fromDate(new Date()),
+    };
     orders
       .add(order)
       .then(({ id }) => {
@@ -96,8 +92,9 @@ const CartForm = () => {
         <Form.Label>Name</Form.Label>
         <Form.Control
           type="name"
-          value={userName}
-          onChange={(nameEvent) => userNameHandler(nameEvent)}
+          name="name"
+          value={userInfo.name}
+          onChange={infoHandler}
           placeholder="Name"
         />
       </Form.Group>
@@ -105,8 +102,9 @@ const CartForm = () => {
         <Form.Label>Email address</Form.Label>
         <Form.Control
           type="email"
-          value={userEmail}
-          onChange={(emailEvent) => userEmailHandler(emailEvent)}
+          name="email"
+          value={userInfo.email}
+          onChange={infoHandler}
           placeholder="Enter email"
         />
         <Form.Text className="text-muted">
@@ -117,8 +115,9 @@ const CartForm = () => {
         <Form.Label>Phone</Form.Label>
         <Form.Control
           type="phone"
-          value={userPhone}
-          onChange={(phoneEvent) => userPhoneHandler(phoneEvent)}
+          name="phone"
+          value={userInfo.phone}
+          onChange={infoHandler}
           placeholder="Phone"
         />
       </Form.Group>
