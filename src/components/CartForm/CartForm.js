@@ -5,6 +5,8 @@ import { ModeContext } from "../../context/CartContext/CartContext";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { db } from "../../firebase/firebase";
+import {validName, validEmail, validPhone} from '../../regexp/RegExp'
+import './CartForm.css'
 
 const CartForm = () => {
   const { cartState, setCartState } = useContext(ModeContext);
@@ -23,6 +25,8 @@ const CartForm = () => {
     setStockItemsIds(singleItemIndexes);
   }, [cartState]);
 
+  console.log(userInfo.name)
+  console.log(validName.test(userInfo.name))
   const orders = db.collection("orders");
   const routeHistory = useHistory();
 
@@ -73,6 +77,7 @@ const CartForm = () => {
       items: [...cartState],
       date: firebase.firestore.Timestamp.fromDate(new Date()),
     };
+
     orders
       .add(order)
       .then(({ id }) => {
@@ -97,6 +102,9 @@ const CartForm = () => {
           onChange={infoHandler}
           placeholder="Name"
         />
+        { validName.test(userInfo.name) ? null : <Form.Text className="invalid__text">
+          Invalid Name!
+        </Form.Text> }
       </Form.Group>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -106,10 +114,13 @@ const CartForm = () => {
           value={userInfo.email}
           onChange={infoHandler}
           placeholder="Enter email"
-        />
-        <Form.Text className="text-muted">
-          Your email will be kept private
-        </Form.Text>
+        />      
+        { validEmail.test(userInfo.email) ? <Form.Text className="valid__text">
+          Your email is valid!
+        </Form.Text> : <Form.Text className="text-muted">
+          Make sure you type email@email.whatever
+        </Form.Text> }
+
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
         <Form.Label>Phone</Form.Label>
@@ -120,6 +131,9 @@ const CartForm = () => {
           onChange={infoHandler}
           placeholder="Phone"
         />
+        { validPhone.test(userInfo.phone) || userInfo.phone === "" ? null : <Form.Text className="invalid__text">
+          Your phone number is invalid!
+        </Form.Text>}
       </Form.Group>
       <Button
         className="form__btn"
@@ -127,6 +141,7 @@ const CartForm = () => {
         onClick={() => {
           addOrder();
         }}
+        disabled = {!validPhone.test(userInfo.phone) || !validEmail.test(userInfo.email) || !validName.test(userInfo.name)}
       >
         Confirm Purchase
       </Button>
