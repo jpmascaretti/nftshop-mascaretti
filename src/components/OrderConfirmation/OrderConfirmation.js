@@ -1,12 +1,12 @@
 import React from "react";
-import { useParams, useHistory} from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import './OrderConfirmation.css'
+import "./OrderConfirmation.css";
 
 const OrderConfirmation = () => {
   const { orderId } = useParams();
 
-  console.log(orderId)
+  console.log(orderId);
   const routeHistory = useHistory();
 
   return (
