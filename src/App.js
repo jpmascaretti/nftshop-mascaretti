@@ -5,8 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import CartContext from "./context/CartContext/CartContext";
 
 
-//Notes: need to add not found page
-
 function App() {
   return (
       <CartContext>
