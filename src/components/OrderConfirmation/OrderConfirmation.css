@@ -16,4 +16,6 @@
   }
 }
 
-/* Added for linting */
+.added {
+  font-size: 10;
+}

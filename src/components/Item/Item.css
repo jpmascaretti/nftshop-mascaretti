@@ -2,8 +2,6 @@
   color: black;
 }
 
-
-
 a:hover {
   text-decoration: none;
 }
@@ -16,5 +14,8 @@ a:hover {
   .card__body--text-description {
     font-size: smaller;
   }
- 
+}
+
+.added {
+  font-size: 10;
 }

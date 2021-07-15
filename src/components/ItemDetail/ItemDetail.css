@@ -63,7 +63,6 @@
   background-color: rgb(233, 6, 25);
 }
 
-
 @media only screen and (max-width: 600px) and (orientation: portrait) {
   .card__image {
     width: 90vw;
@@ -88,7 +87,7 @@
     background-color: rgb(150, 19, 161);
     color: white;
   }
-  
+
   .button__cancel {
     margin: 0.5rem;
     padding: 0;
@@ -125,7 +124,7 @@
     background-color: rgb(150, 19, 161);
     color: white;
   }
-  
+
   .button__cancel {
     margin: 0.5rem;
     padding: 0;
@@ -136,4 +135,9 @@
     background-color: red;
     color: white;
   }
+}
+
+
+.added {
+  font-size: 10;
 }

@@ -1,7 +1,12 @@
 .invalid__text {
-    color: red;
+  color: red;
 }
 
 .valid__text {
-    color: green
+  color: green;
 }
+
+/* Added for linting */
+.added {
+    font-size: 10;
+  }

@@ -59,7 +59,7 @@
   align-self: center;
 }
 
-.carousel__div{
+.carousel__div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +94,7 @@
   height: 100%;
 }
 
-.carousel__font{
+.carousel__font {
   color: black;
 }
 
@@ -120,7 +120,6 @@
   font-weight: bold;
 }
 
-
 @media only screen and (max-width: 600px) and (orientation: portrait) {
   .cart__noitems--header {
     font-family: "Audiowide", "cursive";
@@ -130,11 +129,11 @@
   .form__bottom-div {
     height: 5vh;
   }
-  
+
   .form__middle-div {
     height: 4vh;
   }
-  
+
   .form__top-div {
     height: 8vh;
   }
@@ -146,12 +145,12 @@
     align-self: center;
     justify-content: center;
   }
-  
+
   .carousel-inner {
     width: 100%;
     height: 100%;
   }
-  
+
   .carousel__image--div {
     width: 100%;
     height: 60%;
@@ -163,7 +162,7 @@
     width: 80%;
     height: 100%;
   }
-  
+
   .carousel-here {
     width: 100%;
     height: 100%;
@@ -184,8 +183,6 @@
     display: flex;
     flex-direction: column;
   }
-  
-
 }
 
 @media only screen and (max-width: 900px) and (orientation: landscape) {
@@ -197,11 +194,11 @@
   .form__bottom-div {
     height: 10vh;
   }
-  
+
   .form__middle-div {
     height: 8vh;
   }
-  
+
   .form__top-div {
     height: 20vh;
   }
@@ -213,12 +210,12 @@
     align-self: center;
     justify-content: center;
   }
-  
+
   .carousel-inner {
     width: 100%;
     height: 100%;
   }
-  
+
   .carousel__image--div {
     width: 100%;
     height: 60%;
@@ -230,7 +227,7 @@
     width: 80%;
     height: 100%;
   }
-  
+
   .carousel-here {
     width: 100%;
     height: 100%;
@@ -251,6 +248,9 @@
     display: flex;
     flex-direction: column;
   }
-  
+}
 
+/* Added for linting */
+.added {
+  font-size: 10;
 }
