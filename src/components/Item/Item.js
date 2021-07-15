@@ -13,7 +13,7 @@ const Item = ({ properties }) => {
           <Card.Title className="card__body--text">
             {properties.title}
           </Card.Title>
-          <Card.Text className="card__body--text">
+          <Card.Text className="card__body--text-description">
             {properties.description}
           </Card.Text>
           <Card.Text className="card__body--text">

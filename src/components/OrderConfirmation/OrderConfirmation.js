@@ -11,8 +11,8 @@ const OrderConfirmation = () => {
 
   return (
     <div className="order__confirmation--flex">
-      <h1>Your order has been confirmed</h1>
-      <h3>Order ID: {orderId}</h3>
+      <h1 className="order__confirmation--font">Your order has been confirmed</h1>
+      <h3 className="order__confirmation--font3">Order ID: {orderId}</h3>
       <br></br>
       <Button variant="primary" onClick={(e) => routeHistory.push("/")}>
         Back to NFT Shop
@@ -22,3 +22,5 @@ const OrderConfirmation = () => {
 };
 
 export default OrderConfirmation;
+
+

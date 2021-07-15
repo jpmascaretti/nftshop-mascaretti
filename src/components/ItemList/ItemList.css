@@ -1,10 +1,33 @@
 
+
 .card__grid--layout {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 10vh;
-    align-items:center;
-    justify-items: center;    
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 10vh;
+  align-items: center;
+  justify-items: center;
 }
 
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  .card__grid--layout {
+    width: 100%;
+    display: flex;
+    margin-top: 10vh;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  .card__grid--layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20vh;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 1vmax;
+  }
+}

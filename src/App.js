@@ -4,15 +4,14 @@ import RouteComponent from "./components/RouteComponent/RouteComponent";
 import { BrowserRouter } from "react-router-dom";
 import CartContext from "./context/CartContext/CartContext";
 
-
 function App() {
   return (
-      <CartContext>
-        <BrowserRouter>
-          <Navigation />
-          <RouteComponent />
-        </BrowserRouter>
-      </CartContext>
+    <CartContext>
+      <BrowserRouter>
+        <Navigation />
+        <RouteComponent />
+      </BrowserRouter>
+    </CartContext>
   );
 }
 

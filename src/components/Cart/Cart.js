@@ -8,7 +8,6 @@ import "./Cart.css";
 
 const Cart = () => {
 
-
   const { cartState, removeItemFromCart } = useContext(ModeContext);
 
   const routeHistory = useHistory();

@@ -3,12 +3,11 @@ import Item from "../Item/Item";
 import "./ItemList.css";
 import { CardColumns } from "react-bootstrap";
 
-const ItemList = ({items}) => {
-
+const ItemList = ({ items }) => {
   return (
     <CardColumns className="card__grid--layout">
       {items.map((element, i) => (
-          <Item key={i} properties={element} />
+        <Item key={i} properties={element} />
       ))}
     </CardColumns>
   );

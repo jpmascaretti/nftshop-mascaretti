@@ -35,5 +35,33 @@
   color: white;
   font-weight: bold;
   top: -0.35rem;
-  left: -0.2rem
+  left: -0.2rem;
 }
+
+
+@media only screen and (max-width: 600px) and (orientation: portrait){
+
+  #cart__style:hover {
+    color: white;
+    transform: scale(1.0);
+  }
+  
+  #cart__style:hover + #dot {
+    transform: scale(1.0);
+  }
+  
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape){
+
+  #cart__style:hover {
+    color: white;
+    transform: scale(1.0);
+  }
+  
+  #cart__style:hover + #dot {
+    transform: scale(1.0);
+  }
+  
+}
+
