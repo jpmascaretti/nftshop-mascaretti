@@ -6,10 +6,7 @@
   margin-top: 40vh;
 }
 
-
-
 @media only screen and (max-width: 600px) and (orientation: portrait) {
-
   .order__confirmation--font {
     font-size: 1.6rem;
   }
@@ -17,5 +14,6 @@
   .order__confirmation--font3 {
     font-size: 1.1rem;
   }
-  
 }
+
+/* Added for linting */
