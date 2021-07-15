@@ -58,4 +58,3 @@ const ItemDetail = ({ item }) => {
 
 export default ItemDetail;
 
-const a = 2

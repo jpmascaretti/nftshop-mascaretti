@@ -28,4 +28,4 @@ const Item = ({ properties }) => {
 
 export default Item;
 
-const a = 2
+

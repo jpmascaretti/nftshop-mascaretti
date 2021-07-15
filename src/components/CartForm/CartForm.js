@@ -158,5 +158,3 @@ const CartForm = () => {
 };
 
 export default CartForm;
-
-const a = 2

@@ -15,4 +15,3 @@ const fb = firebase.initializeApp(firebaseConfig);
 
 export const db = fb.firestore();
 
-const a = 2

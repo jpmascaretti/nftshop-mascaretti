@@ -88,5 +88,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-const a = 2

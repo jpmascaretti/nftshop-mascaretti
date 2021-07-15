@@ -57,4 +57,3 @@ const ItemCount = ({ initial, addToCart, item, setQtyAdded }) => {
 
 export default ItemCount;
 
-const a = 2

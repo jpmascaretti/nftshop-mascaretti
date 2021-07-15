@@ -25,4 +25,3 @@ const OrderConfirmation = () => {
 
 export default OrderConfirmation;
 
-const a = 2

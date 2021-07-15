@@ -5,8 +5,3 @@
 .valid__text {
   color: green;
 }
-
-/* Added for linting */
-.added {
-    font-size: 10;
-  }
