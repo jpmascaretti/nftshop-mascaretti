@@ -34,3 +34,5 @@ function CartWidget() {
 }
 
 export default CartWidget;
+
+const a = 2

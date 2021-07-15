@@ -28,3 +28,5 @@ const RouteComponent = () => {
 };
 
 export default RouteComponent;
+
+const a = 2

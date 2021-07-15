@@ -14,3 +14,5 @@ const ItemList = ({ items }) => {
 };
 
 export default ItemList;
+
+const a = 2

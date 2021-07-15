@@ -30,3 +30,5 @@ const CartPurchaseButtons = ({ cancelPurchase, item, quantityAdded }) => {
 };
 
 export default CartPurchaseButtons;
+
+const a = 2

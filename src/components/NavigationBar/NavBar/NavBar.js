@@ -63,3 +63,6 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+/* Added for linting */
+//Added for linting

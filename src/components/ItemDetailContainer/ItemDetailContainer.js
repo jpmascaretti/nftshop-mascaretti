@@ -24,3 +24,7 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
+
+/* Added for linting */
+
+const a = 2

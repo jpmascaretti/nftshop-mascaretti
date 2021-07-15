@@ -13,3 +13,5 @@ const CategorySpinner = () => {
 };
 
 export default CategorySpinner;
+
+const a = 2

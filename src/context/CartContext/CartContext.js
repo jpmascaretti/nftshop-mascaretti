@@ -59,3 +59,5 @@ const CartContext = (props) => {
 };
 
 export default CartContext;
+
+const a = 2

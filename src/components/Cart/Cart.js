@@ -5,9 +5,7 @@ import { Carousel, Button } from "react-bootstrap";
 import CartForm from "../CartForm/CartForm";
 import "./Cart.css";
 
-
 const Cart = () => {
-
   const { cartState, removeItemFromCart } = useContext(ModeContext);
 
   const routeHistory = useHistory();
@@ -24,7 +22,6 @@ const Cart = () => {
       }
       setCartGrandTotal(cartGrandTotal);
     });
-
   }, [cartState]);
 
   return cartState.length === 0 ? (
@@ -66,16 +63,15 @@ const Cart = () => {
                       .000 ETH
                     </li>
                   </ul>
-                <Button
-                  variant="danger"
-                  onClick={() => removeItemFromCart(element)}
-                >
-                  Remove From Cart
-                </Button>
+                  <Button
+                    variant="danger"
+                    onClick={() => removeItemFromCart(element)}
+                  >
+                    Remove From Cart
+                  </Button>
                 </Carousel.Caption>
               </Carousel.Item>
-            ) : 
-            null
+            ) : null
           )}
         </Carousel>
       </div>
@@ -92,3 +88,5 @@ const Cart = () => {
 };
 
 export default Cart;
+
+const a = 2
