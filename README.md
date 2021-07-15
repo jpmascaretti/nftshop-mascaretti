@@ -6,7 +6,7 @@ Welcome to the NFT Shop! This project is an e-commerce shop for Non-Fungible Tok
 
 This application allows users to select and purchase NFT cards that are redeemable to attend NFTCon, an annual super conference only accessible to original card holders. All NFT collectibles are encrypted and secure in the Ethereum blockchain. Thus, all cards must be purchased in ETH currency. There are four collectible categories: Common, Rare, Epic, and Legendary. Each category represents how scarce a card is, thus a holder of a more uncommon card will have extra benefits at the conference. 
 
-![alt text](https://github.com/jpmascaretti/nftshop-mascaretti/blob/main/public/nftshop-readmeimg.png?raw=true)
+![alt text](https://github.com/jpmascaretti/nftshop-mascaretti/blob/main/projectgif_nftshop_mascaretti.gif)
 
 
 ## Technologies
